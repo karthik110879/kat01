@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 
 //LIST : CREATE,UPDATE,READONE,REALALL,DELETE
 //added new
-app.get('/lists', function(req,res) {
+app.get('/*', function(req,res) {
     
     res.sendFile(path.join(__dirname + '/dist/frontend/index.html'));
     });
