@@ -4,9 +4,10 @@ const mongoose = require('./database/mongoose');
 
 const List = require('./database/models/list');
 const Task = require('./database/models/task');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
+//changed from app.use(express.json()); to the below line
 
-app.use(express.json());
+app.use(express.static(__dirname + `/dist/frontend`));
 
 
 app.use((req, res, next) => {
@@ -17,7 +18,12 @@ app.use((req, res, next) => {
 }); 
 
 //LIST : CREATE,UPDATE,READONE,REALALL,DELETE
-
+//added new
+app.get('/*', function(req,res) {
+    
+    res.sendFile(path.join(__dirname + '/dist/frontend/index.html'));
+    });
+//end added new
 
 app.get('/lists', (req, res) => {
     List.find({})
