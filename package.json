@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.9.9"
+    "mongoose": "^5.9.9",
+    "@angular/cli": "9.1.5"
   },
   "engines": {
     "node": "v12.16.2",
