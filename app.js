@@ -7,7 +7,7 @@ const Task = require('./database/models/task');
 const port = process.env.PORT || 8080;
 //changed from app.use(express.json()); to the below line
 
-app.use(express.urlencoded(__dirname + `/dist/frontend`));
+app.use(express.static(__dirname + `/dist/frontend`));
 
 
 app.use((req, res, next) => {
